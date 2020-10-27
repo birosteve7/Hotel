@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="602.0" prefWidth="758.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.FXMLViewController">
+    <children>
+      <TabPane id="tabPane" fx:id="tabPane" layoutY="38.0" prefHeight="564.0" prefWidth="758.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab id="tableTab" fx:id="tableTab" text="Table">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="686.0">
+                     <children>
+                        <TableView id="table" fx:id="table" editable="true" layoutX="-1.0" prefHeight="318.0" prefWidth="765.0" />
+                        <Label layoutX="20.0" layoutY="336.0" text="Firstname" />
+                        <Label layoutX="22.0" layoutY="383.0" text="Surname" />
+                        <TextField id="firstName" fx:id="firstName" layoutX="97.0" layoutY="332.0" prefHeight="26.0" prefWidth="166.0" promptText="John" />
+                        <TextField id="surName" fx:id="surName" layoutX="96.0" layoutY="378.0" prefHeight="26.0" prefWidth="167.0" promptText="Doo" />
+                        <Label layoutX="306.0" layoutY="337.0" text="Check in date" />
+                        <Label layoutX="306.0" layoutY="382.0" prefHeight="18.0" prefWidth="110.0" text="Check out date" textAlignment="RIGHT" />
+                        <TextField id="checkIn" fx:id="checkIn" layoutX="417.0" layoutY="332.0" promptText="dd.MM.yyyy" />
+                        <TextField id="checkOut" fx:id="checkOut" layoutX="417.0" layoutY="378.0" promptText="dd.MM.yyy" />
+                        <TextField id="roomNumber" fx:id="roomNumber" layoutX="145.0" layoutY="424.0" prefHeight="26.0" prefWidth="34.0" />
+                        <Label layoutX="20.0" layoutY="430.0" text="Room number" />
+                        <Button id="save" fx:id="save" layoutX="566.0" layoutY="482.0" mnemonicParsing="false" onAction="#addGuest" text="Save" />
+                        <Label layoutX="290.0" layoutY="428.0" prefHeight="18.0" prefWidth="94.0" text="Mobil Number" />
+                        <TextField id="mobile" fx:id="mobile" layoutX="417.0" layoutY="425.0" promptText="123456" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab id="findTab" fx:id="findTab" onSelectionChanged="#clearFindTabFields" text="Find">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="48.0" layoutY="28.0" text="Give a room number">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <TextField id="inputroom" fx:id="inputroom" layoutX="274.0" layoutY="32.0" prefHeight="27.0" prefWidth="42.0" />
+                        <Button id="find" fx:id="find" layoutX="353.0" layoutY="33.0" mnemonicParsing="false" onAction="#findGuestfromRoom" prefHeight="26.0" prefWidth="50.0" text="Find" />
+                        <TextField id="outputFName" fx:id="outputFName" layoutX="27.0" layoutY="94.0" prefHeight="26.0" prefWidth="130.0" />
+                        <TextField id="outputSName" fx:id="outputSName" layoutX="157.0" layoutY="94.0" prefHeight="26.0" prefWidth="140.0" />
+                        <TextField id="outputCheckIn" fx:id="outputCheckIn" layoutX="297.0" layoutY="94.0" prefHeight="26.0" prefWidth="132.0" />
+                        <TextField id="outputCheckOut" fx:id="outputCheckOut" layoutX="429.0" layoutY="94.0" prefHeight="26.0" prefWidth="142.0" />
+                        <TextField id="outputMobile" fx:id="outputMobile" layoutX="571.0" layoutY="94.0" prefHeight="26.0" prefWidth="142.0" />
+                        <Label layoutX="27.0" layoutY="77.0" text="Firstname" />
+                        <Label layoutX="157.0" layoutY="77.0" text="Surname" />
+                        <Label layoutX="297.0" layoutY="77.0" text="Checkin date" />
+                        <Label layoutX="429.0" layoutY="77.0" text="Checkout date" />
+                        <Label layoutX="571.0" layoutY="77.0" text="Mobile number" />
+                        <Label layoutX="39.0" layoutY="182.0" text="Show available rooms">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Button id="show" fx:id="show" layoutX="271.0" layoutY="186.0" mnemonicParsing="false" onAction="#showAvailableRooms" text="Show" />
+                        <ListView id="ouputList" fx:id="outputList" layoutX="39.0" layoutY="223.0" orientation="HORIZONTAL" prefHeight="50.0" prefWidth="294.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="14.0" layoutY="11.0" prefHeight="27.0" prefWidth="175.0" text="Hotel registrtation">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
